@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="group-name">
+        Queueing Theory Kelompok 2 (M/M/C)
+        <ul>
+            <li>
+                Elyaser Ben Guno (1806195135)
+            </li>
+            <li>
+                Ervin Halimsurya (1806195173)
+            </li>
+            <li>
+                Jonathan Richard (1806147930)
+            </li>
+            <li>
+                Muhammad Ayyasy (1806195116)
+            </li>
+            <li>
+                Riefky Arif Ibrahim (1806194725)
+            </li>
+        </ul>
+    </div>
+    <div class="form-container">
+        <div class="form-title">
+            <h2>Input all the values required</h2>
+        </div>
+        <div class="form">
+            <div id="c_tile" class="col-sm-3">
+                <div class="tile-stats tile-aqua">
+                    <div class="num">
+                        <div class="left">C</div>
+                        <input id="c" type="text" placeholder="C" class="form-control input-lg">
+                    </div>
+                    <h3>Number of Servers</h3>
+                    <p>Jumlah pelayan dalam sistem</p>
+                </div>
+            </div>
+            <div class="lambda-mu-tile-container">
+                <div class="h4">
+                    Arrival and Service rates
+                    <select name="units" id="units" onchange="changeUnit()">
+                        <option value="Day">/Day</option>
+                        <option value="Hour">/Hour</option>
+                        <option value="Minute">/Minute</option>
+                        <option value="Second">/Second</option>
+                    </select>
+                </div>
+                <div id="lambda_mu_tile" class="col-sm-3">
+                    <div id="LambdaTitle" class="h1 left"><b>λ</b> <small class="h3">Arrivals rate / <span
+                                class="unit">Day</span></small></div>
+                    <div class="input-group" style="clear:both">
+                        <input id="Lambda" type="text" class="form-control" placeholder="Arrival rate">
+                    </div>
+
+                    <div id="muTitle" class="h1 left"><b>μ</b> <small class="h3">Services rate / <span
+                                class="unit">Day</span></small></div>
+                    <div class="input-group" style="clear:both">
+                        <input id="Mu" type="text" class="form-control" placeholder="Service rate">
+                    </div>
+                </div>
+            </div>
+            <div id="n_tile">
+
+                <div class="num">
+                    <div class="left">N</div>
+                    <input id="n" type="text" placeholder="n" class="form-control input-lg">
+                </div>
+                <h3>Number of customer in system</h3>
+                <p>Untuk menghitung probabilitas n pelanggan dalam sistem</p>
+
+            </div>
+        </div>
+
+        <button id="calculate-button">Calculate</button>
+    </div>
+
+    <div class="result-container">
+        <div class="result">
+            <div class="result-title">
+                <h2>Results</h2>
+            </div>
+            <div class="result-row">
+                <div class="L result-box">
+                    <div id="L-result" class="result-box-value">0</div>
+                    <h3><b>L</b></h3>
+                    <p>Rata-rata pelanggan dalam sistem</p>
+                </div>
+                <div class="LQ result-box">
+                    <div id="LQ-result" class="result-box-value">0</div>
+                    <h3><b>Lq</b></h3>
+                    <p>Rata-rata pelanggan dalam antrian</p>
+                </div>
+                <div class="W result-box">
+                    <div id="W-result" class="result-box-value">0</div>
+                    <h3><b>W</b></h3>
+                    <p>Rata-rata waktu dalam sistem</p>
+                </div>
+                <div class="WQ result-box">
+                    <div id="WQ-result" class="result-box-value">0</div>
+                    <h3><b>Wq</b></h3>
+                    <p>Rata-rata waktu dalam antrian</p>
+                </div>
+            </div>
+            <div class="result-row">
+                <div class="rho result-box">
+                    <div id="rho-result" class="result-box-value">0</div>
+                    <h3><b>&rho;</b></h3>
+                    <p>Utilisasi antrian</p>
+                </div>
+                <div class="PO result-box">
+                    <div id="PO-result" class="result-box-value">0</div>
+                    <h3><b>P0</b></h3>
+                    <p>Probabilitas tidak ada pelanggan dalam sistem</p>
+                </div>
+                <div class="PN result-box">
+                    <div id="PN-result" class="result-box-value">0</div>
+                    <h3><b>Pn</b></h3>
+                    <p>Probabilitas ada n pelanggan dalam sistem</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
